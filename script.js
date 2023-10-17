@@ -12,11 +12,11 @@ function getWeather() {
           var version = document.getElementById('version');
           var namaOrang = document.getElementById('namaOrang');
           
-            namaOrang.textContent = data.name;
-            bio.textContent = data.bio;
-            language.textContent = data.language;
-            version.textContent = data.version;
-            id.textContent = data.id; 
+        namaOrang.textContent = data.name[1];
+        bio.textContent = data.bio;
+        language.textContent = data.language;
+        version.textContent = data.version;
+        id.textContent = data.id; 
         },
       error: function(err) {
         console.log(err);
