@@ -5,6 +5,7 @@ function load_ajax(){
  	ajax.onreadystatechange = function(){
  		if(this.readyState ===4 && this.status ===200){
  			let data = JSON.parse(this.responseText)
+            console.log(data);
 			   document.getElementById('namaOrang').innerHTML += data[0].name;
                document.getElementById('id').innerHTML += data[0].id;
                document.getElementById('namaOrang1').innerHTML += data[1].name;
@@ -27,9 +28,10 @@ function load_ajax(){
                document.getElementById('id9').innerHTML += data[9].id;
                document.getElementById('namaOrang10').innerHTML += data[10].name;
                document.getElementById('id10').innerHTML += data[10].id;
-			}
- 		}
-         ajax.send();
- 	}   
+		}
+ 	}
+        ajax.send();
+        ajax.load('POST', url, true);
+}   
  	
 load_ajax();
